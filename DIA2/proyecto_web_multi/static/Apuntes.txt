@@ -1,0 +1,25 @@
+QUE ES UN DOCKERFILE:?
+=====================
+Un archivo Dockerfile es un archivo de configuración utilizado en Docker, una plataforma de contenedores, para definir cómo se debe construir una imagen de contenedor. Una imagen de contenedor es una representación ligera y autónoma de una aplicación junto con su entorno de ejecución, que incluye el sistema operativo, las bibliotecas y las dependencias necesarias para ejecutar esa aplicación.
+Un Dockerfile contiene una serie de instrucciones que Docker sigue secuencialmente para construir una imagen de contenedor. Estas instrucciones especifican cómo se debe configurar el entorno del contenedor, qué software y dependencias se deben instalar y cómo se deben copiar archivos en el contenedor.
+
+ALGUNAS INSTRUCCIONES:
+=======================
+
+
+FROM, especifica la imagen base a partir de la cual se construirá el contenedor. Luego, se establece un directorio de trabajo con WORKDIR, se copian los archivos locales al contenedor con COPY, se instalan las dependencias con RUN, y finalmente, se define el comando que se ejecutará cuando el contenedor se inicie con CMD ó ENTRYPOINT [ "executable" ].
+se extablecer el puerto de salida con PORTS
+
+ALGUNOS EJEMPLOS
+====================
+
+* IMAGEN DEDE EL DOCKER HUB:
+  armandoruiz/flask_app_1
+* CREAR EL CONTENEDOR EN BASE A ESA IMAGEN  
+  docker run -it -p 5000:5000 armandoruiz/flask_app_1 
+* CREAR UNA IMAGEN EN BASE A UN DOCKERFILE
+  docker build -t <nombre_imagen> .   
+* CREAR UNA CONTENEDOR EN BASE A LA IMAGEN ANTERIOR EXPONERLA AL PUERTO 5000
+  docker run -it -p 5000:5000 <nombre_imagen>
+
+
