@@ -1,0 +1,14 @@
+# Version de la sintaxis de compose , y asociada a la version de docker
+version: '3' 
+
+#Especificar todos los servicios manejados por el docker-compose
+#nombre de la imagen , container,variables entorno,volumnes ,redes
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+       
+
